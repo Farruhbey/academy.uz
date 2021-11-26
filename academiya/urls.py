@@ -24,7 +24,7 @@ from drf_yasg.views import get_schema_view
 router = DefaultRouter()
 router.register('talabalar',TalabalarViewSet)
 router.register('loyiha', LoyihaViewSet)
-router.register('eng_yaxshi', Eng_yaxshiViewSet)
+router.register('eng_yaxshi_talabalar', Eng_yaxshiViewSet)
 
 schema_view = get_schema_view(
    openapi.Info(
