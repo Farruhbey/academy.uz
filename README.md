@@ -1,1 +1,1 @@
-# academy.uz
+# habibi.uz
