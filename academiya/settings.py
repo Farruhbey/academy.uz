@@ -29,8 +29,9 @@ SECRET_KEY = 'django-insecure-0sf$2=2cwpy%4lf*-z&qtztcs=*))&a!rzfnkk+#o9(8-l0b%b
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["127.0.0.1","academy.uz","81.95.232.205"]
-
+# ALLOWED_HOSTS = ["127.0.0.1","academy.uz","81.95.232.205"]
+ALLOWED_HOSTS=['*']
+CORS_ORIGIN_ALLOW_ALL = True
 
 # Application definition
 
@@ -44,6 +45,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'django_filters',
     'drf_yasg',
+    'corsheaders',
     'loyiha'
 ]
 REST_FRAMEWORK = {
@@ -59,6 +61,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'academiya.urls'
