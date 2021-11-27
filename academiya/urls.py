@@ -21,6 +21,8 @@ from rest_framework import viewsets
 from drf_yasg import openapi
 from rest_framework import permissions
 from drf_yasg.views import get_schema_view
+from.settings import DEBUG, STATIC_URL,STATIC_ROOT,MEDIA_URL,MEDIA_ROOT
+from django.conf.urls.static import static
 router = DefaultRouter()
 router.register('talabalar',TalabalarViewSet)
 router.register('loyiha', LoyihaViewSet)
@@ -45,3 +47,7 @@ urlpatterns = [
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
 ]
+
+if DEBUG:
+    urlpatterns += static(STATIC_URL,docoment_root = STATIC_ROOT)
+    urlpatterns += static(MEDIA_URL,document_root = MEDIA_ROOT)
