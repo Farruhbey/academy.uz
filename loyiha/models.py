@@ -26,6 +26,15 @@ class Loyiha(models.Model):
         return self.nomi
 
 class Eng_yaxshi(models.Model):
+    ismi = models.CharField(max_length = 1000)
+    familiyasi = models.CharField(max_length = 1000)
+    malumoti = models.CharField(max_length = 1000)
+    holati = models.CharField(max_length = 1000)
+    
+    yoshi = models.IntegerField(null=True)
+    biladigan_dasturlash_tili = models.CharField(max_length = 100, null=True)
+    rasmi = models.ImageField()
+    
     darajasi = models.CharField(max_length = 100)
     loyihasi = models.CharField(max_length = 100)
 
