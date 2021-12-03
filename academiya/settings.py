@@ -45,11 +45,19 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'corsheaders',
     'rest_framework',
+    'knox',
     'django_filters',
     'drf_yasg',
-    
+    'account',
     'loyiha'
 ]
+
+#Autentifikatsiya
+REST_FRAMEWORK = {
+  'DEFAULT_AUTHENTICATION_CLASSES': [
+        'knox.auth.TokenAuthentication',
+  ]
+}
 
 
 MIDDLEWARE = [
@@ -90,8 +98,18 @@ WSGI_APPLICATION = 'academiya.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'academy',
+
+        'USER': 'postgres',
+
+        'PASSWORD': 'admin',
+
+        'HOST': '127.0.0.1',
+
+        'PORT': '5432',
+
+
     }
 }
 
